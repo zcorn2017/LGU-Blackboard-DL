@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 // Copyright (c) 2023 zcorn2017. All Rights reserved.
-// The orginal source code of manifest v2 have be adapted to be compatible with v3. And some modifications have been made to meet the specific requirements of the extension.
+// The orginal source code of manifest v2 have been adapted to be compatible with v3. And some modifications have been made to meet the specific requirements of the extension.
 
 // Send back to the popup a sorted deduped list of valid link URLs on this page.
 // The popup injects this script into all frames in the active tab.
