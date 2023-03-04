@@ -1,0 +1,26 @@
+<!-- 
+Copyright (c) 2023 zcorn2017. All Rights reserved.
+The orginal source code of manifest v2 have be adapted to be compatible with v3. And some modifications have been made to meet the specific requirements of the extension.
+Licenced under Apache 2.0.
+-->
+
+<!DOCTYPE html>
+<head>
+<script src='popup.js'></script>
+</head>
+<body>
+<h1>LGU (aka CUHKSZ) Blackboard Downloader</h1>
+<p> You may select the links to the files (normally up-bottom) by your preference (Folders are excluded, which means reccurive downloading is not available.)</p>
+<input type=text id=filter placeholder=Filter>
+<input type=checkbox id=regex>
+<label for=regex>Regex</label><br>
+<button id=download0>Download All!</button>
+<table id=links>
+  <tr>
+    <th><input type=checkbox checked id=toggle_all></th>
+    <th align=left>URL</th>
+  </tr>
+</table>
+<button id=download1>Download All!</button>
+</body>
+</html>
