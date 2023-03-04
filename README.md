@@ -9,8 +9,8 @@ A Chromium (Chrome/Edge compatible) browser extension to download all you need i
 
 ## Usage
 
-> If the extension ask you to allow any perssions, plz do it.
-> You may check the code by your self in case of any considerations on privacy.
+> If the extension ask you to allow any permissions, plz do it.
+> You may review the code by your self in case of any considerations on privacy.
 
 
 1. Download the repository either by `git clone https://github.com/zcorn2017/LGU-Blackboard-DL.git` or click the green `Code` button and then choose `Download ZIP` (Remember to unzip the file in the latter way).
