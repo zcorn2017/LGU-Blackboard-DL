@@ -9,7 +9,7 @@ A Chromium (Chrome/Edge compatible) browser extension to download all you need i
 
 ## Usage
 
-> If the extension ask you to allow any permissions, plz do it.
+> If the extension asks you for any permissions, plz do it.
 > You may review the code by your self in case of any considerations on privacy.
 
 
