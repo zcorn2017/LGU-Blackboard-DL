@@ -19,7 +19,7 @@ A Chromium (Chrome/Edge compatible) browser extension to download all you need i
 
 ## Other things to note
 
-The orignal code was release by the Chromium authors in a demo.
+The orignal code was released by the Chromium authors in a demo.
 There are two modifications made:
 
 1. The orginal source code of manifest v2 has been adapted to be compatible with v3.
