@@ -1,8 +1,8 @@
 # LGU Blackboard Downloader
 
-A Chromium (Chrome/Edge compatible) browser extension to download all you need in the LGU (aka CUHKSZ) Blackboard
+A Chromium (Chrome/Edge/Orion compatible) browser extension to download all you need in the LGU (aka CUHKSZ) Blackboard
 
-一个Chrome/Edge适配的用以批量下载龙岗大学（也称香港中文大学深圳）的Blackboard文件的浏览器扩展
+一个Chrome/Edge/Orion适配的用以批量下载龙岗大学（也称香港中文大学深圳）的Blackboard文件的浏览器扩展
 
 
 
