@@ -55,37 +55,6 @@ function downloadCheckedLinks() {
   window.close();
 }
 
-// Re-filter allLinks into visibleLinks and reshow visibleLinks.
-function filterLinks() {
-  var filterValue = document.getElementById('filter').value;
-  if (document.getElementById('regex').checked) {
-    visibleLinks = allLinks.filter(function(link) {
-      return link.match(filterValue);
-    });
-  } else {
-    var terms = filterValue.split(' ');
-    visibleLinks = allLinks.filter(function(link) {
-      for (var termI = 0; termI < terms.length; ++termI) {
-        var term = terms[termI];
-        if (term.length != 0) {
-          var expected = (term[0] != '-');
-          if (!expected) {
-            term = term.substr(1);
-            if (term.length == 0) {
-              continue;
-            }
-          }
-          var found = (-1 !== link.indexOf(term));
-          if (found != expected) {
-            return false;
-          }
-        }
-      }
-      return true;
-    });
-  }
-  showLinks();
-}
 
 // Add links to allLinks and visibleLinks, sort and show them.  send_links.js is
 // injected into all frames of the active tab, so this listener may be called
@@ -102,11 +71,8 @@ chrome.runtime.onMessage.addListener(function(links) {
 // Set up event handlers and inject send_links.js into all frames in the active
 // tab.
 window.onload = function() {
-  document.getElementById('filter').onkeyup = filterLinks;
-  document.getElementById('regex').onchange = filterLinks;
   document.getElementById('toggle_all').onchange = toggleAll;
   document.getElementById('download0').onclick = downloadCheckedLinks;
-  document.getElementById('download1').onclick = downloadCheckedLinks;
 
   chrome.windows.getCurrent(function (currentWindow) {
     chrome.tabs.query({active: true, windowId: currentWindow.id},
