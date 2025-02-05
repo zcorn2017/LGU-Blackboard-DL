@@ -24,7 +24,7 @@ function showLinks() {
     checkbox.type = 'checkbox';
     checkbox.id = 'check' + i;
     col0.appendChild(checkbox);
-    col1.innerText = visibleLinks[i];
+    col1.innerText = visibleLinks[i].text;
     col1.style.whiteSpace = 'nowrap';
     col1.onclick = function() {
       checkbox.checked = !checkbox.checked;
@@ -47,7 +47,7 @@ function toggleAll() {
 function downloadCheckedLinks() {
   for (var i = 0; i < visibleLinks.length; ++i) {
     if (document.getElementById('check' + i).checked) {
-      chrome.downloads.download({url: visibleLinks[i]},
+      chrome.downloads.download({url: visibleLinks[i].href},
                                              function(id) {
       });
     }
@@ -63,7 +63,7 @@ chrome.runtime.onMessage.addListener(function(links) {
   for (var index in links) {
     allLinks.push(links[index]);
   }
-  allLinks.sort();
+  allLinks.sort((a, b) => a.href.localeCompare(b.href));
   visibleLinks = allLinks;
   showLinks();
 });

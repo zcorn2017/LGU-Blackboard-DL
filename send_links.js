@@ -18,18 +18,18 @@ links = links.map(function(element) {
   if (hashIndex >= 0) {
     href = href.substr(0, hashIndex);
   }
-  return href;
+  return { href: href, text: element.textContent.trim() || href };
 });
 
-links.sort();
+links.sort((a, b) => a.href.localeCompare(b.href));
 
 // Remove duplicates and invalid URLs.
 var kBadPrefix = 'javascript';
 for (var i = 0; i < links.length;) {
-  if (((i > 0) && (links[i] == links[i - 1])) ||
-      (links[i] == '') ||
-      (kBadPrefix == links[i].toLowerCase().substr(0, kBadPrefix.length))||
-      !(links[i].includes('bbcswebdav'))) {
+  if (((i > 0) && (links[i].href == links[i - 1].href)) ||
+      (links[i].href == '') ||
+      (kBadPrefix == links[i].href.toLowerCase().substr(0, kBadPrefix.length)) ||
+      !(links[i].href.includes('bbcswebdav'))) {
     links.splice(i, 1);
   } else {
     ++i;
