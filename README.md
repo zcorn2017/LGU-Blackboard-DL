@@ -17,8 +17,6 @@ NOTE: Mac 上的 Orion 浏览器必须在设置中先关闭智能防跟踪才能
 
 ### Install it from Chrome Web Store (Recommended)
 
-![Chrome Web Store](https://chromewebstore.google.com/detail/padjefoeemljklmhmlimmbidhnodkobj?utm_source=item-share-cb)
-
 [![chrome version][chrome-v]][chrome-url]
 
 ### Install manually
