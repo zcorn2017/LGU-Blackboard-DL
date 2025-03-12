@@ -13,7 +13,7 @@ NOTE: Mac 上的 Orion 浏览器必须在设置中先关闭智能防跟踪才能
 ## Usage
 
 > If the extension asks you for any permissions, plz do it.
-> You may review the code by your self in case of any considerations on privacy.
+> You may review the code by yourself in case of any considerations on privacy.
 
 ### Install it from Chrome Web Store (Recommended)
 
