@@ -1,4 +1,4 @@
-# LGU Blackboard Downloader for Orion
+# LGU Blackboard Downloader
 
 A Chromium (Chrome/Edge/Orion compatible) browser extension to download all you need in the LGU (aka CUHKSZ) Blackboard
 
