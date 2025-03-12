@@ -36,7 +36,7 @@ There are two modifications made:
 2. And some modifications have been made to meet the specific requirements of the extension.
 
 [chrome-v]: https://img.shields.io/chrome-web-store/v/padjefoeemljklmhmlimmbidhnodkobj?style=for-the-badge
-[chrome-url]: https://chrome.google.com/webstore/detail/zcorn2017/jhfmmdhbinleghabnblahfjfalfgidik
+[chrome-url]: https://chrome.google.com/webstore/detail/zcorn2017/padjefoeemljklmhmlimmbidhnodkobj
 
 
 You may contribute to the code by creating new pull requests.
