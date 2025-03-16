@@ -18,11 +18,7 @@ links = links.map(function(element) {
   if (hashIndex >= 0) {
     href = href.substr(0, hashIndex);
   }
-  return { 
-    href: href, 
-    text: element.textContent.trim() || href,
-    isFolder: href.includes('listContent.jsp')
-  };
+  return { href: href, text: element.textContent.trim() || href };
 });
 
 links.sort((a, b) => a.href.localeCompare(b.href));
@@ -33,51 +29,11 @@ for (var i = 0; i < links.length;) {
   if (((i > 0) && (links[i].href == links[i - 1].href)) ||
       (links[i].href == '') ||
       (kBadPrefix == links[i].href.toLowerCase().substr(0, kBadPrefix.length)) ||
-      !(links[i].href.includes('bbcswebdav') || links[i].href.includes('listContent.jsp'))) {
+      !(links[i].href.includes('bbcswebdav'))) {
     links.splice(i, 1);
   } else {
     ++i;
   }
 }
 
-async function getFolderContents(url) {
-  try {
-    const response = await fetch(url);
-    const text = await response.text();
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(text, 'text/html');
-    return Array.from(doc.getElementsByTagName('a'))
-      .filter(a => a.href.includes('bbcswebdav'))
-      .map(a => ({
-        href: a.href,
-        text: a.textContent.trim() || a.href,
-        isFolder: false,
-        parentFolder: url
-      }));
-  } catch (error) {
-    console.error('Error fetching folder:', error);
-    return [];
-  }
-}
-
-// Process all links and fetch folder contents
-async function processLinks() {
-  let processedLinks = [];
-  
-  for (let link of links) {
-    if (link.isFolder) {
-      const folderContents = await getFolderContents(link.href);
-      processedLinks.push({
-        ...link,
-        contents: folderContents,
-        expanded: false
-      });
-    } else {
-      processedLinks.push(link);
-    }
-  }
-  
-  chrome.runtime.sendMessage(processedLinks);
-}
-
-processLinks();
+chrome.runtime.sendMessage(links);
